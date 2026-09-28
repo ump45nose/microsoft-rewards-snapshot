@@ -1,0 +1,6 @@
+.env
+evidence/
+sessions/
+*.log
+*.png
+node_modules/
