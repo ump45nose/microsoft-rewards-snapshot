@@ -16,3 +16,5 @@ node snapshot.cjs
 可选 `REWARDS_PROXY=http://host:port`；不设置则用默认网络。输出目录包含页面 HTML、截图和账户活动，必须保持私有，不要上传至 Git。`SNAPSHOT_NAME` 可改变 JSON 文件名。
 
 这只是一张状态快照，不执行搜索、答题或领取；退出码 `0` 仅表示读取成功，不表示当日积分已达上限。实际积分应通过上游任务执行前后的余额和活动计数核对。代码遵循上游 GPL-3.0 许可证。
+
+The snapshot also reads fresh authenticated Bing flyout counters into `desktopSearch`, `exploreOnBing`, and `promotionMeta`. These fields contain progress and offer metadata only. An unavailable flyout is recorded as `counterReadError`; old execution logs do not substitute for a current counter read. This remains a read-only adapter.
